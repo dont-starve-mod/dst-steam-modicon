@@ -12,9 +12,9 @@ if __name__ == '__main__':
 	print("开始更新..")
 	f = open("imglinks/{}.csv".format(int(time.time())), "w")
 
-	for i in range(1, 500):
+	for i in range(1, 100):
 		print("Page:", i)
-		r = requests.get(URL.MOST_SUBSCRIBED + str(i))
+		r = requests.get(URL.LAST_UPDATE + str(i))
 		if r.status_code != 200:
 			print("警告: 请求失败")
 			continue
