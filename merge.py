@@ -8,7 +8,7 @@ urldata = {}
 
 def tojs():
 	return "var steamModURLS = {\n" + "\n".join([
-		"\t'{}': '{}',".format(mod, url) for mod, url in urldata.items()
+		"'{}': '{}',".format(mod, url) for mod, url in urldata.items()
 		]) + "\n}"
 
 def loadcsv(path):
@@ -28,6 +28,7 @@ if __name__ == '__main__':
 		return url
 
 	for path in csvfiles:
+		print("Load:", path)
 		for mod, imgurl in loadcsv(path):
 			if mod in urldata: continue
 
